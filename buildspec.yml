@@ -8,9 +8,21 @@ phases:
       - export NODE_OPTIONS=--openssl-legacy-provider
       - npm install
 
+  pre_build:
+    commands:
+      - echo "Logging into Docker registry..."
+      - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin docker.io
+
   build:
     commands:
-      - npm run build || { echo 'Build failed'; exit 1; }
+      - echo "Building Docker image..."
+      - docker build -t "docker.io/$DOCKER_REGISTRY_USERNAME/BookApp-Store" .
+      - echo "Pushing Docker image to registry..."
+      - docker push "docker.io/$DOCKER_REGISTRY_USERNAME/BookApp-Store"
+
+  post_build:
+    commands:
+      - echo "Build completed successfully!"
 
 artifacts:
   files:
