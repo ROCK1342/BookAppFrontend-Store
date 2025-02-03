@@ -16,9 +16,9 @@ phases:
   build:
     commands:
       - echo "Building Docker image..."
-      - docker build -t "docker.io/$DOCKER_REGISTRY_USERNAME/BookApp-Store" .
+      - docker build -t "docker.io/$DOCKER_REGISTRY_USERNAME/bookapp-store" .
       - echo "Pushing Docker image to registry..."
-      - docker push "docker.io/$DOCKER_REGISTRY_USERNAME/BookApp-Store"
+      - docker push "docker.io/$DOCKER_REGISTRY_USERNAME/bookapp-store"
 
   post_build:
     commands:
