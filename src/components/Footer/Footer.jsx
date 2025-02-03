@@ -36,7 +36,7 @@ export default function App() {
 			>
 				© 2023 Copyright:
 				<a className='text-white' href='http://localhost:3000/'>
-					NerdsHub
+					SholasHub
 				</a>
 			</div>
 		</MDBFooter>
