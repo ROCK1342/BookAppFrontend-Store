@@ -2,7 +2,7 @@
 set -e
 
 # Pull the Docker image from Docker Hub
-docker pull sholly333/BookApp-Store:latest
+docker pull sholly333/bookapp-store:latest
 
 # Run the Docker image as a container
-docker run -dit -p 8080:80 sholly333/BookApp-Store
+docker run -dit -p 8080:80 sholly333/bookapp-store
