@@ -5,4 +5,4 @@ set -e
 docker pull sholly333/bookapp-store:latest
 
 # Run the Docker image as a container
-docker run -dit -p 8081:80 sholly333/bookapp-store
+docker run -dit -p 8082:80 sholly333/bookapp-store
