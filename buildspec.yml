@@ -23,6 +23,8 @@ phases:
   post_build:
     commands:
       - echo "Build completed successfully!"
+      - echo "Writing imagedefinitions.json..."
+      - echo '[ { "name": "bookapp-store", "imageUri": "docker.io/$DOCKER_REGISTRY_USERNAME/bookapp-store" } ]' > imagedefinitions.json
 
 env:
   parameter-store:
@@ -32,6 +34,7 @@ env:
 
 artifacts:
   files:
+    - imagedefinitions.json
     - public/**/*
     - src/**/*
     - package.json
